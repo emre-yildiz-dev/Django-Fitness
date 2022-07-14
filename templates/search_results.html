@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}
+    Search
+{% endblock title %}
+{% block section1-content %}
+    <div class="container">
+        <section class="section section-no-border section-light custom-padding-top-1 mb-0">
+            <h1>Search Results</h1>
+            {% for service in service_list %}
+                <div>
+                    <h3>
+                        <a href="{{ service.get_absolute_url }}">{{ service.title }}</a>
+                    </h3>
+                    <p>Description: {{ service.description }}</p>
+                    <p>Price: $ {{ service.price }}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock section1-content %}

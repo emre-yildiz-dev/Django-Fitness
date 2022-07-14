@@ -1,0 +1,190 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}
+    About Us
+{% endblock title %}
+{% block section1-content %}
+    <section class="section section-no-border section-light custom-padding-top-1 mb-0">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col">
+                    <h1 class="font-weight-bold text-color-primary mb-0">Our Classes</h1>
+                    <h4 class="font-weight-bold text-color-quaternary">One is for you</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet laoreet lorem, a imperdiet sapien tincidunt at. Vivamus sed libero ut diam feugiat sagittis sit amet in justo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-quaternary section-center section-no-border m-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-md-7 col-lg-4 appear-animation"
+                     data-appear-animation="fadeIn"
+                     data-appear-animation-delay="0">
+                    <span class="thumb-info custom-thumb-info-2">
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary custom-font-style-1">{{ service_list.6.title }}</h4>
+                            <span class="font-weight-bold text-color-primary custom-font-style-2">${{ service_list.6.price }} / month</span>
+                            <ul class="list custom-pricing-list list-primary list-borders">
+                                <li>Unlimited Use</li>
+                                <li>Yoga Classes</li>
+                                <li>Zumba Classes</li>
+                            </ul>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.6.get_absolute_url }}"
+                               title="Join Now">Join Now</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-sm-9 col-md-7 col-lg-4 custom-sm-margin-1 custom-xs-margin-2 appear-animation"
+                     data-appear-animation="fadeIn"
+                     data-appear-animation-delay="1000">
+                    <span class="thumb-info custom-thumb-info-2">
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary custom-font-style-1">{{ service_list.7.title }}</h4>
+                            <span class="font-weight-bold text-color-primary custom-font-style-2">${{ service_list.7.price }} / month</span>
+                            <ul class="list custom-pricing-list list-primary list-borders">
+                                <li>Unlimited Use</li>
+                                <li>Yoga Classes</li>
+                                <li>Zumba Classes</li>
+                            </ul>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.7.get_absolute_url }}"
+                               title="Join Now">Join Now</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-sm-9 col-md-7 col-lg-4 custom-sm-margin-1 custom-xs-margin-2 appear-animation"
+                     data-appear-animation="fadeIn"
+                     data-appear-animation-delay="2000">
+                    <span class="thumb-info custom-thumb-info-2">
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary custom-font-style-1">{{ service_list.8.title }}</h4>
+                            <span class="font-weight-bold text-color-primary custom-font-style-2">${{ service_list.8.price }} / month</span>
+                            <ul class="list custom-pricing-list list-primary list-borders">
+                                <li>Unlimited Use</li>
+                                <li>Yoga Classes</li>
+                                <li>Zumba Classes</li>
+                            </ul>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.8.get_absolute_url }}"
+                               title="Join Now">Join Now</a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-quaternary section-center section-no-border m-0">
+        <div class="container">
+            <div class="row justify-content-center mb-4 mb-md-0 mb-lg-5">
+                <div class="col-md-8 col-lg-4 ">
+                    <span class="thumb-info custom-thumb-info-2 thumb-info-hide-wrapper-bg">
+                        <span class="thumb-info-wrapper m-0">
+                            <img src="img/demos/gym/classes/classes-1.jpg" class="img-fluid" alt="">
+                        </span>
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary mb-3">{{ service_list.0.title }}</h4>
+                            <p class="text-color-dark p-0">{{ service_list.0.description }}</p>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.0.get_absolute_url }}"
+                               title="Learn More">Learn More</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-md-8 col-lg-4 custom-sm-margin-2">
+                    <span class="thumb-info custom-thumb-info-2 thumb-info-hide-wrapper-bg">
+                        <span class="thumb-info-wrapper m-0">
+                            <img src="img/demos/gym/classes/classes-2.jpg" class="img-fluid" alt="">
+                        </span>
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary mb-3">{{ service_list.1.title }}</h4>
+                            <p class="text-color-dark p-0">{{ service_list.1.description }}</p>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.1.get_absolute_url }}"
+                               title="Learn More">Learn More</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-md-8 col-lg-4 custom-sm-margin-2">
+                    <span class="thumb-info custom-thumb-info-2 thumb-info-hide-wrapper-bg">
+                        <span class="thumb-info-wrapper m-0">
+                            <img src="img/demos/gym/classes/classes-3.jpg" class="img-fluid" alt="">
+                        </span>
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary mb-3">
+                                {{ service_list.2.title }}
+                            </h4>
+                            <p class="text-color-dark p-0">
+                                {{ service_list.2.description }}
+                            </p>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.2.get_absolute_url }}"
+                               title="Learn More">Learn More</a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-4 custom-sm-margin-2 custom-xs-margin-1"
+                     data-appear-animation-delay="600">
+                    <span class="thumb-info custom-thumb-info-2 thumb-info-hide-wrapper-bg">
+                        <span class="thumb-info-wrapper m-0">
+                            <img src="img/demos/gym/classes/classes-4.jpg" class="img-fluid" alt="">
+                        </span>
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary mb-3">
+                                {{ service_list.3.title }}
+                            </h4>
+                            <p class="text-color-dark p-0">
+                                {{ service_list.3.description }}
+                            </p>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.3.get_absolute_url }}"
+                               title="Learn More">Learn More</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-md-8 col-lg-4 custom-sm-margin-2">
+                    <span class="thumb-info custom-thumb-info-2 thumb-info-hide-wrapper-bg">
+                        <span class="thumb-info-wrapper m-0">
+                            <img src="img/demos/gym/classes/classes-5.jpg" class="img-fluid" alt="">
+                        </span>
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary mb-3">
+                                {{ service_list.4.title }}
+                            </h4>
+                            <p class="text-color-dark p-0">
+                                {{ service_list.4.description }}
+                            </p>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.4.get_absolute_url }}"
+                               title="Learn More">Learn More</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-md-8 col-lg-4 custom-sm-margin-2">
+                    <span class="thumb-info custom-thumb-info-2 thumb-info-hide-wrapper-bg">
+                        <span class="thumb-info-wrapper m-0">
+                            <img src="img/demos/gym/classes/classes-6.jpg" class="img-fluid" alt="">
+                        </span>
+                        <span class="thumb-info-caption bg-color-light text-center p-5">
+                            <h4 class="font-weight-bold text-color-quaternary mb-3">
+                                {{ service_list.5.title }}
+                            </h4>
+                            <p class="text-color-dark p-0">
+                                {{ service_list.5.description }}
+                            </p>
+                            <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                               href="{{ service_list.5.get_absolute_url }}"
+                               title="Learn More">Learn More</a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock section1-content %}

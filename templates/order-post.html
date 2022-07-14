@@ -1,0 +1,191 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load mathfilters %}
+{% block title %}
+    Order Form
+{% endblock title %}
+{% block section1-content %}
+    <section class="section section-no-border section-light custom-padding-top-1">
+        <div class="container" style="min-height:500px">
+            <div class="row">
+                <div class="col-md-6 border p-5 offset-1" style="border-radius:20px">
+                    <form action="/orders/order-post/" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <input type="text"
+                                   name="service"
+                                   id="service"
+                                   class="form-control"
+                                   placeholder="please enter aylik"
+                                   value="{{ service.title }}"
+                                   readonly>
+                        </div>
+                        <div class="form-group">
+                            {% if service.title == "Yearly" %}
+                                <label for="monthly">Yearly</label>
+                                <select name="monthly" id="monthly" class="form-control">
+                                    <option value="12">
+                                        1
+                                    </option>
+                                </select>
+                            {% else %}
+                                <label for="monthly">Monthly</label>
+                                <select name="monthly" id="monthly" class="form-control">
+                                    <option value="1">
+                                        1
+                                    </option>
+                                    <option value="3">
+                                        3
+                                    </option>
+                                    <option value="6">
+                                        6
+                                    </option>
+                                    <option value="12">
+                                        12 Yearly %10 OFF!!
+                                    </option>
+                                </select>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            {% if service.title == "Yearly" %}
+                                <input type="number" name="price" id="price" class="form-control" placeholder="please enter price" value={{ service.price|mul:12 }} readonly>
+                            {% else %}
+                                <input type="number" name="price" id="price" class="form-control" placeholder="please enter price" value={{ service.price }} readonly>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="service_price" id="service_price" class="form-control" placeholder="please enter price" value={{ service.price }} hidden readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="service_id" id="service_id" class="form-control" placeholder="please enter price" value={{ service.id }} hidden readonly>
+                        </div>
+                        {% if user.is_authenticated %}
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-dumbbell"></i> Buy Now!
+                            </button>
+                        {% else %}
+                            <a href="/accounts/login">
+                                <span style="font-size: 22px;"> << Please Login to Purchase >> </span>
+                            </a>
+                        {% endif %}
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <h3>{{ service.title }}</h3>
+                    <img src="{{ service.image.url }}" style="width: 100%"/>
+                </div>
+            </div>
+        </section>
+        <div id="itemDetailGallery"
+             class="row custom-item-detail-gallery lightbox d-block p-0"
+             data-plugin-options="{'delegate': 'a.lightbox', 'type': 'image', 'gallery': {'enabled': true}}">
+            {% for image in image_list %}
+                {% if image.service_id == service.id %}
+                    <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+                        <a href="{{ image.image.url }}" class="lightbox text-decoration-none">
+                            <span class="thumb-info custom-thumb-info-1">
+                                <span class="thumb-info-wrapper">
+                                    <span class="thumb-info-plus"></span>
+                                    <img src="{{ image.image.url }}" class="img-fluid" alt="">
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% comment %} <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-2.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-2.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-3.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-3.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-4.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-4.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-5.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-5.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-4.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-4.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-3.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-3.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-3.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-3.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-2.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-2.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-1.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-1.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+            </div> {% endcomment %}
+        </div>
+    </div>
+{% endblock section1-content %}

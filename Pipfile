@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=4.0.4"
+pillow = "*"
+django-allauth = "*"
+django-crispy-forms = "*"
+pep8 = "*"
+autopep8 = "*"
+djlint = "*"
+pylint = "*"
+python-dateutil = "*"
+tzdata = "*"
+django-ckeditor = "*"
+django-mathfilters = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

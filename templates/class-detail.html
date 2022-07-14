@@ -1,0 +1,277 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}
+    {{ service.title }}
+{% endblock title %}
+{% block section1-content %}
+    <section class="section section-no-border section-light custom-padding-top-1 mb-0">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-7 col-lg-9">
+                    <h1 class="font-weight-bold text-color-primary mb-0">{{ service.title }}</h1>
+                    <h4 class="font-weight-bold text-color-quaternary">Classes</h4>
+                    <p>{{ service.detail|linebreaks }}</p>
+                </div>
+                <div class="col-md-5 col-lg-3">
+                    <div class="custom-join-now-form position-style-1 bg-color-primary p-4">
+                        <h4 class="font-weight-bold text-color-light mb-0">Purchase Now!</h4>
+                        <p class="font-weight-light text-color-light text-2">Get your body control.</p>
+                        <form id="vipRequest"
+                              class="contact-form"
+                              action="/orders/order-post/"
+                              method="POST">
+                            {% csrf_token %}
+                            <div class="contact-form-success alert alert-success d-none mt-4"
+                                 id="vipRequestSuccess">
+                                <strong>Success!</strong> Your VIP request has been sent to us.
+                            </div>
+                            <div class="contact-form-error alert alert-danger d-none mt-4"
+                                 id="vipRequestError">
+                                <strong>Success!!</strong> There was an error sending your VIP request.
+                                <span class="mail-error-message text-1 mt-2 d-block"
+                                      id="vipRequestErrorMessage"></span>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <a class="btn btn-quaternary custom-btn-style-2 font-weight-bold"
+                                       href="/orders/form/{{ service.id }}">Purchase!</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="itemDetailGallery"
+         class="row custom-item-detail-gallery lightbox d-block p-0"
+         data-plugin-options="{'delegate': 'a.lightbox', 'type': 'image', 'gallery': {'enabled': true}}">
+        {% for image in image_list %}
+            {% if image.service_id == service.id %}
+                <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+                    <a href="{{ image.image.url }}" class="lightbox text-decoration-none">
+                        <span class="thumb-info custom-thumb-info-1">
+                            <span class="thumb-info-wrapper">
+                                <span class="thumb-info-plus"></span>
+                                <img src="{{ image.image.url }}" class="img-fluid" alt="">
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% comment %} <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-2.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-2.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-3.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-3.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-4.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-4.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-5.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-5.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-4.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-4.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-3.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-3.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-3.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-3.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-2.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-2.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div>
+        <div class="col-12 col-md-5ths col-lg-5ths isotope-item p-0">
+            <a href="img/demos/gym/about-us/about-us-carousel-1.jpg" class="lightbox text-decoration-none">
+                <span class="thumb-info custom-thumb-info-1">
+                    <span class="thumb-info-wrapper">
+                        <span class="thumb-info-plus"></span>
+                        <img src="img/demos/gym/about-us/about-us-carousel-1.jpg" class="img-fluid" alt="">
+                    </span>
+                </span>
+            </a>
+        </div> {% endcomment %}
+    </div>
+    <section class="section section-center section-no-border section-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <ul class="comments">
+                        <li>
+                            <div class="comment">
+                                <div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+                                    <img class="avatar" alt="" src="{% static 'img/avatars/avatar-2.jpg' %}">
+                                </div>
+                                <div class="comment-block">
+                                    <div class="comment-arrow"></div>
+                                    <span class="comment-by">
+                                        <strong>John Doe</strong>
+                                        <span class="float-end"></span>
+                                    </span>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.
+                                    </p>
+                                    <span class="date float-end">January 12, 2021 at 1:38 pm</span>
+                                </div>
+                            </div>
+                        </li>
+                        {% for comment in comment_list %}
+                            {% if comment.service_id == service.id %}
+                                <li>
+                                    <div class="comment">
+                                        <div class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+                                            <img class="avatar" alt="" src="{% static 'img/avatars/avatar-2.jpg' %}">
+                                        </div>
+                                        <div class="comment-block">
+                                            <div class="comment-arrow"></div>
+                                            <span class="comment-by">
+                                                <strong>{{ comment.name }}</strong>
+                                                <span class="float-end"></span>
+                                            </span>
+                                            <p>
+                                                {{ comment.comment }}
+                                            </p>
+                                            <span class="date float-end">{{ comment.created_at }}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-center section-no-border section-light">
+        <div class="container">
+            <div class="post-block mt-5 post-leave-comment">
+                <h4 class="mb-3">
+                    Leave a comment
+                </h4>
+                <form class=" p-4 rounded bg-color-grey"
+                      action="/classes/comment-post"
+                      method="POST">
+                    {% csrf_token %}
+                    <div class="p-2">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label class="form-label required font-weight-bold text-dark">
+                                    Full Name
+                                </label>
+                                <input type="text"
+                                       value=""
+                                       data-msg-required="Please enter your name."
+                                       maxlength="100"
+                                       class="form-control"
+                                       name="name"
+                                       required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="form-label required font-weight-bold text-dark">
+                                    Email Address
+                                </label>
+                                <input type="email"
+                                       value=""
+                                       data-msg-required="Please enter your email address."
+                                       data-msg-email="Please enter a valid email address."
+                                       maxlength="100"
+                                       class="form-control"
+                                       name="email"
+                                       required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input type="text"
+                                       value="{{ service.id }}"
+                                       maxlength="100"
+                                       class="form-control"
+                                       name="service"
+                                       required
+                                       hidden>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label class="form-label required font-weight-bold text-dark">
+                                    Comment
+                                </label>
+                                <textarea maxlength="5000"
+                                          data-msg-required="Please enter your message."
+                                          rows="8"
+                                          class="form-control"
+                                          name="message"
+                                          required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col mb-0">
+                                <input type="submit"
+                                       value="Post Comment"
+                                       class="btn btn-primary btn-modern"
+                                       data-loading-text="Loading...">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock section1-content %}

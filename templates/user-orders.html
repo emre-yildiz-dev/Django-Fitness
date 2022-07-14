@@ -1,0 +1,44 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}
+    User Orders
+{% endblock title %}
+{% block section1-content %}
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+    <div class="container">
+        <section class="section section-no-border section-light custom-padding-top-1 mb-0">
+            <h3>My Orders</h3>
+            <table class="table table-hover ">
+                <tr>
+                    <th>Service</th>
+                    <th>Starting Date</th>
+                    <th>Ending Date</th>
+                    <th>Status</th>
+                    <th>Total Price</th>
+                    <th>Payment Method</th>
+                    <th>Note</th>
+                </tr>
+                {% for order in order_list %}
+                    <tr>
+                        <td>{{ order.service }}</td>
+                        <td>{{ order.StartDate }}</td>
+                        <td>{{ order.EndDate }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.total }}</td>
+                        <td>{{ order.payment }}</td>
+                        <td>{{ order.note }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </div>
+    <div class="container">
+        <h3>
+            <a href="/profile"> << Back</a>
+        </h3>
+    </div>
+{% endblock section1-content %}

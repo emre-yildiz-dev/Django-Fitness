@@ -1,0 +1,235 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}
+    About Us
+{% endblock title %}
+{% block section1-content %}
+    <section class="section section-no-border section-light custom-padding-top-1">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-7 col-lg-9">
+                    <h1 class="font-weight-bold text-color-primary mb-0">About Us</h1>
+                    <h4 class="font-weight-bold text-color-quaternary">Challenge yourself today</h4>
+                </div>
+                <p>{{ setting.aboutus|linebreaks }}</p>
+            </div>
+        </div>
+    </section>
+    <section class="parallax section section-text-light section-parallax m-0"
+             data-plugin-parallax
+             data-plugin-options="{'speed': 1.5}"
+             data-image-src="img/demos/gym/about-us/about-us-parallax-1.jpg">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-6">
+                    <h2 class="font-weight-bold text-color-light">Why Us?</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list list-icons list-light text-color-light">
+                                <li>
+                                    <i class="fas fa-check"></i> Fitness Consultation
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Professionals
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Zumba
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Nutrition
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> TRX
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list list-icons list-light text-color-light">
+                                <li>
+                                    <i class="fas fa-check"></i> Conditioning
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Sports
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Consultation
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Spin
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Full Cardio
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="lightbox"
+         data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
+        <div class="owl-carousel custom-arrows-style-1"
+             data-plugin-options="{'items': 5, 'loop': false, 'dots': false, 'nav': true}">
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-1.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-1.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-2.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-2.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-3.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-3.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-4.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-4.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-5.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-5.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-1.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-1.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-2.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-2.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-3.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-3.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div>
+                <a href="img/demos/gym/about-us/about-us-carousel-4.jpg"
+                   class="lightbox text-decoration-none">
+                    <span class="thumb-info custom-thumb-info-1">
+                        <span class="thumb-info-wrapper">
+                            <span class="thumb-info-plus"></span>
+                            <img src="img/demos/gym/about-us/about-us-carousel-4.jpg"
+                                 class="img-fluid"
+                                 alt="">
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <section class="section section-center section-no-border section-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-lg-4 appear-animation"
+                     data-appear-animation="fadeInUp"
+                     data-appear-animation-delay="0">
+                    <img src="img/demos/gym/icons/trainer-colored.png" class="mb-2" alt />
+                    <h2 class="font-weight-bold text-color-quaternary">Trainers</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit, felis nec gravida lobortis, est felis convallis lacus, vitae commodo metus ipsum.
+                    </p>
+                    <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                       href="demo-gym-staff.html"
+                       title="Meet The Staff">Meet the Staff</a>
+                </div>
+                <div class="col-sm-8 col-lg-4 custom-sm-margin-1 appear-animation"
+                     data-appear-animation="fadeInUp"
+                     data-appear-animation-delay="300">
+                    <img src="img/demos/gym/icons/member-colored.png" class="mb-2" alt />
+                    <h2 class="font-weight-bold text-color-quaternary">Become a Member</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit, felis nec gravida lobortis, est felis convallis lacus, vitae commodo metus ipsum.
+                    </p>
+                    <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                       href="demo-gym-contact-us.html"
+                       title="Join Now">Join Now</a>
+                </div>
+                <div class="col-sm-8 col-lg-4 custom-sm-margin-1 appear-animation"
+                     data-appear-animation="fadeInUp"
+                     data-appear-animation-delay="600">
+                    <img src="img/demos/gym/icons/group-fitness-colored.png" class="mb-2" alt />
+                    <h2 class="font-weight-bold text-color-quaternary">Group Fitness</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit, felis nec gravida lobortis, est felis convallis lacus, vitae commodo metus ipsum.
+                    </p>
+                    <a class="btn btn-primary custom-btn-style-1 text-uppercase text-color-light custom-font-weight-medium"
+                       href="demo-gym-classes-detail.html"
+                       title="Learn More">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock section1-content %}

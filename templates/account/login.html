@@ -1,0 +1,130 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Log In
+{% endblock title %}
+{% block section1-content %}
+    <section class="section section-no-border section-light custom-padding-top-1 mb-0">
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-lg-6 custom-join-now-form custom-position-style-2 bg-color-primary p-4">
+                    <h4 class="font-weight-bold text-color-light mb-0">Log In</h4>
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-dark">Log In</button>
+                </form>
+                <br>
+                <a href="/accounts/signup">
+                    <button class="btn btn-light">Sign Up</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 position-relative p-0">
+            <section class="resources section-background custom-wide-section custom-small-section-padding-2 custom-overlay-style-2"
+                     style="background: url('img/demos/gym/carousels/resources.jpg'); background-size: cover;">
+                <h2 class="text-color-light font-weight-bold">Resources</h2>
+                <div class="owl-carousel custom-dots-style-2 custom-dots-bottom-left-1"
+                     data-plugin-options="{'items': 1, 'loop': false, 'dots': true, 'nav': false}">
+                    <div class="custom-resources-style">
+                        <span class="number bg-color-primary text-color-light">1</span>
+                        <span class="content">
+                            <span class="title text-color-light">How to get start</span>
+                            <p>
+                                Containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like aldus.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="custom-resources-style">
+                        <span class="number bg-color-primary text-color-light">2</span>
+                        <span class="content">
+                            <span class="title text-color-light">How to get start</span>
+                            <p>
+                                Containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like aldus.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="custom-resources-style">
+                        <span class="number bg-color-primary text-color-light">3</span>
+                        <span class="content">
+                            <span class="title text-color-light">How to get start</span>
+                            <p>
+                                Containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like aldus.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-4 position-relative p-0">
+            <section class="working-hours section-background custom-wide-section custom-small-section-padding-2 custom-overlay-style-2"
+                     style="background: url('img/demos/gym/carousels/working-hour.jpg'); background-size: cover;">
+                <h2 class="text-color-light font-weight-bold">Working Hours</h2>
+                <ul class="custom-list-style-1 ps-0">
+                    <li>
+                        <span class="custom-list-item custom-spacing-1 text-color-light custom-font-weight-medium">Mon
+                        - Fri</span>
+                        <span class="custom-list-value custom-text-color-1">: 5.30am - 11.00pm</span>
+                    </li>
+                    <li>
+                        <span class="custom-list-item custom-spacing-1 text-color-light custom-font-weight-medium">Saturday</span>
+                        <span class="custom-list-value custom-text-color-1">: 5.30am - 1.00pm</span>
+                    </li>
+                    <li>
+                        <span class="custom-list-item custom-spacing-1 text-color-light custom-font-weight-medium">Sunday</span>
+                        <span class="custom-list-value custom-text-color-1">: Closed</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="col-lg-4 position-relative p-0">
+            <section class="resources section-background custom-wide-section custom-small-section-padding-2 custom-overlay-style-2"
+                     style="background: url('img/demos/gym/carousels/resources.jpg'); background-size: cover;">
+                <h2 class="text-color-light font-weight-bold">Resources</h2>
+                <div class="owl-carousel custom-dots-style-2 custom-dots-bottom-left-1"
+                     data-plugin-options="{'items': 1, 'loop': false, 'dots': true, 'nav': false}">
+                    <div class="custom-resources-style">
+                        <span class="number bg-color-primary text-color-light">1</span>
+                        <span class="content">
+                            <span class="title text-color-light">How to get start</span>
+                            <p>
+                                Containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like aldus.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="custom-resources-style">
+                        <span class="number bg-color-primary text-color-light">2</span>
+                        <span class="content">
+                            <span class="title text-color-light">How to get start</span>
+                            <p>
+                                Containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like aldus.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="custom-resources-style">
+                        <span class="number bg-color-primary text-color-light">3</span>
+                        <span class="content">
+                            <span class="title text-color-light">How to get start</span>
+                            <p>
+                                Containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like aldus.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock section1-content %}
